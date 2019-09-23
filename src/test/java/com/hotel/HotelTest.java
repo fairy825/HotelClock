@@ -86,7 +86,7 @@ class HotelTest {
 //        Hotel h = new Hotel(LocalDateTime.now());
         h.correctLobbyClocks();
         Date d = new Date();
-        d.setTime(d.getTime()-12* 60 * 60 * 1000);
+        d.setTime(d.getTime()-13* 60 * 60 * 1000);
         assertEquals(d.toInstant().atZone( ZoneId.systemDefault() ).toLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),
                 h.getNYClock().getLocalDateTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),
                 "测试纽约时间失败，现在纽约时间为"+dateFormat.format(d)
